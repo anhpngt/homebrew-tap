@@ -10,6 +10,16 @@ class Mcpt < Formula
     bin.install "mcpt"
   end
 
+  def caveats
+    <<~EOS
+      To use mcpt as an MCP server in Claude Code, run:
+        claude mcp add mcpt #{opt_bin}/mcpt
+
+      To verify it was added:
+        claude mcp list
+    EOS
+  end
+
   test do
     assert_match version.to_s, shell_output("\#{bin}/mcpt --version", 2)
   end
