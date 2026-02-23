@@ -3,7 +3,7 @@ cask "fin" do
   name "fin"
   desc "MCP server for git operations"
   homepage "https://github.com/anhpngt/fin-releases"
-  version "0.0.7"
+  version "0.0.8"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,20 +14,20 @@ cask "fin" do
   on_macos do
     on_arm do
       url "https://github.com/anhpngt/fin-releases/releases/download/v#{version}/fin_v#{version}_darwin_arm64.tar.gz"
-      sha256 "e9cad2229f15a1d7c7dd070370a8fae417f33c85e0d18545dbc54db4c7a26b96"
+      sha256 "8ced6099a39b7972f97364b9452157265fdaee7edb9fc49a96aea9d25d780589"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/anhpngt/fin-releases/releases/download/v#{version}/fin_v#{version}_linux_amd64.tar.gz"
-      sha256 "d7423f687edf3b908b244c73e090f72dcacc41f4c52b814fa1088410ff42fb38"
+      sha256 "bba8813114ac3a965308df17c6840b52112dc27b0f34a86bfdd53a59c2886ec9"
     end
   end
 
   caveats do
     "To use fin as an MCP server in Claude Code, run:"
-    "  claude mcp add fin #{bin}/fin"
+    "  claude mcp add fin fin"
     ""
     "To verify it was added:"
     "  claude mcp list"
