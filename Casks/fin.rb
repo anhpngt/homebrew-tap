@@ -3,7 +3,7 @@ cask "fin" do
   name "fin"
   desc "MCP server for git operations"
   homepage "https://github.com/anhpngt/fin-releases"
-  version "0.0.8"
+  version "0.1.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,14 +14,14 @@ cask "fin" do
   on_macos do
     on_arm do
       url "https://github.com/anhpngt/fin-releases/releases/download/v#{version}/fin_v#{version}_darwin_arm64.tar.gz"
-      sha256 "8ced6099a39b7972f97364b9452157265fdaee7edb9fc49a96aea9d25d780589"
+      sha256 "32210e287a20d8c848e59dbdc3253834295857c704ec66144b60b664fb9dd768"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/anhpngt/fin-releases/releases/download/v#{version}/fin_v#{version}_linux_amd64.tar.gz"
-      sha256 "bba8813114ac3a965308df17c6840b52112dc27b0f34a86bfdd53a59c2886ec9"
+      sha256 "afbf7147fe059d826b33556b06a754ad360ee7fe8f1dcb4bc54fe1959217feae"
     end
   end
 
