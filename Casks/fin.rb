@@ -3,7 +3,7 @@ cask "fin" do
   name "fin"
   desc "MCP server for git operations"
   homepage "https://github.com/anhpngt/fin-releases"
-  version "0.1.0"
+  version "0.2.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,15 +14,19 @@ cask "fin" do
   on_macos do
     on_arm do
       url "https://github.com/anhpngt/fin-releases/releases/download/v#{version}/fin_v#{version}_darwin_arm64.tar.gz"
-      sha256 "32210e287a20d8c848e59dbdc3253834295857c704ec66144b60b664fb9dd768"
+      sha256 "1fd6626bdd8fae020bff80f15d41da5a7054d9d1f98f5781093b34de4393f8fd"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/anhpngt/fin-releases/releases/download/v#{version}/fin_v#{version}_linux_amd64.tar.gz"
-      sha256 "afbf7147fe059d826b33556b06a754ad360ee7fe8f1dcb4bc54fe1959217feae"
+      sha256 "9ed8841ded814862996907dad59ecd8d80daf11c7cd80edc51e8f4eaf3ee429b"
     end
+  end
+
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/fin"]
   end
 
   caveats do
